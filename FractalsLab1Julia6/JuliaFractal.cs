@@ -7,9 +7,6 @@ namespace FractalsLab1Julia6
             InitializeComponent();
         }
 
-        private void JuliaFractalUI_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }
