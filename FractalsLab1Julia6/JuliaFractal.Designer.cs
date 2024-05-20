@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JuliaFractalUI));
             tableLayout = new TableLayoutPanel();
-            cNumber = new Label();
+            cNumberLabel = new Label();
             iterationsLabel = new Label();
             radiusLabel = new Label();
             viewOffSetXLabel = new Label();
             viewOffsetYLabel = new Label();
             zoomLabel = new Label();
-            сСhoice = new TextBox();
+            сNumberСhoice = new TextBox();
             radiusChoice = new TextBox();
             offsetXChoice = new NumericUpDown();
             offsetYChoice = new NumericUpDown();
@@ -65,13 +65,13 @@
             tableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 22F));
             tableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 161F));
             tableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayout.Controls.Add(cNumber, 3, 3);
+            tableLayout.Controls.Add(cNumberLabel, 3, 3);
             tableLayout.Controls.Add(iterationsLabel, 3, 5);
             tableLayout.Controls.Add(radiusLabel, 3, 7);
             tableLayout.Controls.Add(viewOffSetXLabel, 3, 9);
             tableLayout.Controls.Add(viewOffsetYLabel, 3, 11);
             tableLayout.Controls.Add(zoomLabel, 3, 13);
-            tableLayout.Controls.Add(сСhoice, 5, 3);
+            tableLayout.Controls.Add(сNumberСhoice, 5, 3);
             tableLayout.Controls.Add(radiusChoice, 5, 7);
             tableLayout.Controls.Add(offsetXChoice, 5, 9);
             tableLayout.Controls.Add(offsetYChoice, 5, 11);
@@ -105,19 +105,19 @@
             tableLayout.Size = new Size(1216, 784);
             tableLayout.TabIndex = 0;
             // 
-            // cNumber
+            // cNumberLabel
             // 
-            cNumber.AutoSize = true;
-            cNumber.BackColor = Color.MediumPurple;
-            cNumber.Dock = DockStyle.Fill;
-            cNumber.Font = new Font("MS Gothic", 11.25F, FontStyle.Bold);
-            cNumber.ForeColor = Color.GhostWhite;
-            cNumber.Location = new Point(855, 31);
-            cNumber.Name = "cNumber";
-            cNumber.Size = new Size(154, 33);
-            cNumber.TabIndex = 0;
-            cNumber.Text = "C:";
-            cNumber.TextAlign = ContentAlignment.MiddleCenter;
+            cNumberLabel.AutoSize = true;
+            cNumberLabel.BackColor = Color.MediumPurple;
+            cNumberLabel.Dock = DockStyle.Fill;
+            cNumberLabel.Font = new Font("MS Gothic", 11.25F, FontStyle.Bold);
+            cNumberLabel.ForeColor = Color.GhostWhite;
+            cNumberLabel.Location = new Point(855, 31);
+            cNumberLabel.Name = "cNumberLabel";
+            cNumberLabel.Size = new Size(154, 33);
+            cNumberLabel.TabIndex = 0;
+            cNumberLabel.Text = "C:";
+            cNumberLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // iterationsLabel
             // 
@@ -189,16 +189,16 @@
             zoomLabel.Text = "Zoom:";
             zoomLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // сСhoice
+            // сNumberСhoice
             // 
-            сСhoice.BorderStyle = BorderStyle.FixedSingle;
-            сСhoice.Cursor = Cursors.IBeam;
-            сСhoice.Dock = DockStyle.Left;
-            сСhoice.Font = new Font("MS Gothic", 9F);
-            сСhoice.Location = new Point(1037, 34);
-            сСhoice.Name = "сСhoice";
-            сСhoice.Size = new Size(138, 19);
-            сСhoice.TabIndex = 6;
+            сNumberСhoice.BorderStyle = BorderStyle.FixedSingle;
+            сNumberСhoice.Cursor = Cursors.IBeam;
+            сNumberСhoice.Dock = DockStyle.Left;
+            сNumberСhoice.Font = new Font("MS Gothic", 9F);
+            сNumberСhoice.Location = new Point(1037, 34);
+            сNumberСhoice.Name = "сNumberСhoice";
+            сNumberСhoice.Size = new Size(138, 19);
+            сNumberСhoice.TabIndex = 6;
             // 
             // radiusChoice
             // 
@@ -301,6 +301,7 @@
             saveButton.TabIndex = 15;
             saveButton.Text = "Save as JPEG";
             saveButton.UseVisualStyleBackColor = false;
+            saveButton.Click += saveButton_Click;
             // 
             // renderButton
             // 
@@ -315,6 +316,7 @@
             renderButton.TabIndex = 16;
             renderButton.Text = "Render";
             renderButton.UseVisualStyleBackColor = false;
+            renderButton.Click += renderButton_Click;
             // 
             // JuliaFractalUI
             // 
@@ -341,13 +343,13 @@
         #endregion
 
         private TableLayoutPanel tableLayout;
-        private Label cNumber;
+        private Label cNumberLabel;
         private Label iterationsLabel;
         private Label radiusLabel;
         private Label viewOffSetXLabel;
         private Label viewOffsetYLabel;
         private Label zoomLabel;
-        private TextBox сСhoice;
+        private TextBox сNumberСhoice;
         private TextBox radiusChoice;
         private NumericUpDown offsetXChoice;
         private NumericUpDown offsetYChoice;
