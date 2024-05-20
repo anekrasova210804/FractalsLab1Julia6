@@ -11,11 +11,11 @@ namespace FractalsLab1Julia6
         {
             get
             {
-                return new Complex(double.Parse(Real—hoice.Text), double.Parse(ImaginaryChoice.Text));
+                return new Complex(double.Parse(Real–°hoice.Text), double.Parse(ImaginaryChoice.Text));
             }
             set
             {
-                complexNumber = new Complex(double.Parse(Real—hoice.Text), double.Parse(ImaginaryChoice.Text));
+                complexNumber = new Complex(double.Parse(Real–°hoice.Text), double.Parse(ImaginaryChoice.Text));
             }
         }
         private int maxIterations

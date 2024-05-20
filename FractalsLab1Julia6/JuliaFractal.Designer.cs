@@ -1,4 +1,4 @@
-﻿namespace FractalsLab1Julia6
+namespace FractalsLab1Julia6
 {
     partial class JuliaFractalUI
     {
