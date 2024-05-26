@@ -1,6 +1,8 @@
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace FractalsLab1Julia6
@@ -25,13 +27,13 @@ namespace FractalsLab1Julia6
         }
         private int radius
         {
-            get => (int)radiusChoice.Value;
+            get { return (int)radiusChoice.Value; }
             set { radius = (int)radiusChoice.Value; }
         }
-        private int zoom
+        private double zoom
         {
-            get => (int)zoomChoice.Value;
-            set { zoom = (int)zoomChoice.Value; }
+            get => (double)zoomChoice.Value;
+            set { zoom = (double)zoomChoice.Value; }
         }
 
         private double viewOffsetX
@@ -54,9 +56,14 @@ namespace FractalsLab1Julia6
 
         private void renderButton_Click(object sender, EventArgs e)
         {
+            //var watch = System.Diagnostics.Stopwatch.StartNew();
             juliaPictureBox.Image = juliaSetBitmap();
-
+            //watch.Stop();
+            //long elapsedMs = watch.ElapsedMilliseconds/1000;
+            //MessageBox.Show(elapsedMs.ToString() + " sec");
         }
+
+ 
 
         private Bitmap juliaSetBitmap()
         {
@@ -66,11 +73,12 @@ namespace FractalsLab1Julia6
             Color[] colors = (from c in Enumerable.Range(0, maxIterations + 1)
                               select Color.FromArgb((c >> 5) * 36, (c >> 3 & 7) * 36, (c & 3) * 85)).ToArray();
 
-            var bitmap = new Bitmap(juliaPictureBox.Width, juliaPictureBox.Height);
+            Bitmap bitmap = new Bitmap(juliaPictureBox.Width, juliaPictureBox.Height);
             for (int x = 0; x < juliaPictureBox.Width; x++)
             {
                 for (int y = 0; y < juliaPictureBox.Height; y++)
                 {
+
                     z = new Complex(1.5 * (x - juliaPictureBox.Width / 2) / (0.5 * zoom * juliaPictureBox.Width) + viewOffsetX,
                         1.0 * (y - juliaPictureBox.Height / 2) / (0.5 * zoom * juliaPictureBox.Height) + viewOffsetY);
                     i = 0;
@@ -80,22 +88,17 @@ namespace FractalsLab1Julia6
                         z += complexNumber;
                         i += 1;
                     }
-                    bitmap.SetPixel(x, y, colors[i]);
+                    bitmap.SetPixel(x, y, i < maxIterations ? Color.FromArgb(i %4 * 63, i % 2 * 20, i % 4 * 60) : Color.White);
                 }
             }
- 
 
-
-            Graphics g = Graphics.FromImage(bitmap);
-
-            g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
-            g.Flush();
             return bitmap;
         }
- 
 
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            juliaPictureBox.Image.Save(@".\juliaFractal.jpeg", ImageFormat.Jpeg);
+            juliaPictureBox.Image.Save(@".\juliaFractal.png", ImageFormat.Png);
+        }
     }
 }
