@@ -106,7 +106,7 @@ namespace FractalsLab1Julia6
             tableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
             tableLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 19F));
-            tableLayout.Size = new Size(1216, 784);
+            tableLayout.Size = new Size(930, 538);
             tableLayout.TabIndex = 0;
             // 
             // cNumberLabel
@@ -116,7 +116,7 @@ namespace FractalsLab1Julia6
             cNumberLabel.Dock = DockStyle.Fill;
             cNumberLabel.Font = new Font("MS Gothic", 11.25F, FontStyle.Bold);
             cNumberLabel.ForeColor = Color.GhostWhite;
-            cNumberLabel.Location = new Point(835, 31);
+            cNumberLabel.Location = new Point(549, 14);
             cNumberLabel.Name = "cNumberLabel";
             cNumberLabel.Size = new Size(154, 33);
             cNumberLabel.TabIndex = 0;
@@ -130,7 +130,7 @@ namespace FractalsLab1Julia6
             iterationsLabel.Dock = DockStyle.Fill;
             iterationsLabel.Font = new Font("MS Gothic", 11.25F, FontStyle.Bold);
             iterationsLabel.ForeColor = Color.GhostWhite;
-            iterationsLabel.Location = new Point(835, 79);
+            iterationsLabel.Location = new Point(549, 62);
             iterationsLabel.Name = "iterationsLabel";
             iterationsLabel.Size = new Size(154, 35);
             iterationsLabel.TabIndex = 1;
@@ -144,7 +144,7 @@ namespace FractalsLab1Julia6
             radiusLabel.Dock = DockStyle.Fill;
             radiusLabel.Font = new Font("MS Gothic", 11.25F, FontStyle.Bold);
             radiusLabel.ForeColor = Color.GhostWhite;
-            radiusLabel.Location = new Point(835, 126);
+            radiusLabel.Location = new Point(549, 109);
             radiusLabel.Name = "radiusLabel";
             radiusLabel.Size = new Size(154, 38);
             radiusLabel.TabIndex = 2;
@@ -158,7 +158,7 @@ namespace FractalsLab1Julia6
             viewOffSetXLabel.Dock = DockStyle.Fill;
             viewOffSetXLabel.Font = new Font("MS Gothic", 11.25F, FontStyle.Bold);
             viewOffSetXLabel.ForeColor = Color.GhostWhite;
-            viewOffSetXLabel.Location = new Point(835, 176);
+            viewOffSetXLabel.Location = new Point(549, 159);
             viewOffSetXLabel.Name = "viewOffSetXLabel";
             viewOffSetXLabel.Size = new Size(154, 36);
             viewOffSetXLabel.TabIndex = 3;
@@ -172,7 +172,7 @@ namespace FractalsLab1Julia6
             viewOffsetYLabel.Dock = DockStyle.Fill;
             viewOffsetYLabel.Font = new Font("MS Gothic", 11.25F, FontStyle.Bold);
             viewOffsetYLabel.ForeColor = Color.GhostWhite;
-            viewOffsetYLabel.Location = new Point(835, 226);
+            viewOffsetYLabel.Location = new Point(549, 209);
             viewOffsetYLabel.Name = "viewOffsetYLabel";
             viewOffsetYLabel.Size = new Size(154, 36);
             viewOffsetYLabel.TabIndex = 4;
@@ -186,7 +186,7 @@ namespace FractalsLab1Julia6
             zoomLabel.Dock = DockStyle.Fill;
             zoomLabel.Font = new Font("MS Gothic", 11.25F, FontStyle.Bold);
             zoomLabel.ForeColor = Color.GhostWhite;
-            zoomLabel.Location = new Point(835, 274);
+            zoomLabel.Location = new Point(549, 257);
             zoomLabel.Name = "zoomLabel";
             zoomLabel.Size = new Size(154, 36);
             zoomLabel.TabIndex = 5;
@@ -199,7 +199,7 @@ namespace FractalsLab1Julia6
             RealСhoice.Cursor = Cursors.IBeam;
             RealСhoice.Dock = DockStyle.Left;
             RealСhoice.Font = new Font("MS Gothic", 9F);
-            RealСhoice.Location = new Point(1017, 34);
+            RealСhoice.Location = new Point(731, 17);
             RealСhoice.Name = "RealСhoice";
             RealСhoice.Size = new Size(73, 19);
             RealСhoice.TabIndex = 6;
@@ -209,10 +209,10 @@ namespace FractalsLab1Julia6
             // 
             offsetXChoice.BorderStyle = BorderStyle.FixedSingle;
             tableLayout.SetColumnSpan(offsetXChoice, 2);
-            offsetXChoice.DecimalPlaces = 16;
+            offsetXChoice.DecimalPlaces = 6;
             offsetXChoice.Dock = DockStyle.Left;
             offsetXChoice.Font = new Font("MS Gothic", 9F);
-            offsetXChoice.Location = new Point(1017, 179);
+            offsetXChoice.Location = new Point(731, 162);
             offsetXChoice.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             offsetXChoice.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
             offsetXChoice.Name = "offsetXChoice";
@@ -223,10 +223,10 @@ namespace FractalsLab1Julia6
             // 
             offsetYChoice.BorderStyle = BorderStyle.FixedSingle;
             tableLayout.SetColumnSpan(offsetYChoice, 2);
-            offsetYChoice.DecimalPlaces = 16;
+            offsetYChoice.DecimalPlaces = 6;
             offsetYChoice.Dock = DockStyle.Left;
             offsetYChoice.Font = new Font("MS Gothic", 9F);
-            offsetYChoice.Location = new Point(1017, 229);
+            offsetYChoice.Location = new Point(731, 212);
             offsetYChoice.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             offsetYChoice.Minimum = new decimal(new int[] { 10, 0, 0, int.MinValue });
             offsetYChoice.Name = "offsetYChoice";
@@ -237,9 +237,10 @@ namespace FractalsLab1Julia6
             // 
             zoomChoice.BorderStyle = BorderStyle.FixedSingle;
             tableLayout.SetColumnSpan(zoomChoice, 2);
+            zoomChoice.DecimalPlaces = 6;
             zoomChoice.Dock = DockStyle.Left;
             zoomChoice.Font = new Font("MS Gothic", 9F);
-            zoomChoice.Location = new Point(1017, 277);
+            zoomChoice.Location = new Point(731, 260);
             zoomChoice.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             zoomChoice.Name = "zoomChoice";
             zoomChoice.Size = new Size(173, 19);
@@ -252,7 +253,7 @@ namespace FractalsLab1Julia6
             tableLayout.SetColumnSpan(iterationsChoice, 2);
             iterationsChoice.Dock = DockStyle.Left;
             iterationsChoice.Font = new Font("MS Gothic", 9F);
-            iterationsChoice.Location = new Point(1017, 82);
+            iterationsChoice.Location = new Point(731, 65);
             iterationsChoice.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             iterationsChoice.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             iterationsChoice.Name = "iterationsChoice";
@@ -265,10 +266,10 @@ namespace FractalsLab1Julia6
             juliaPictureBox.BackColor = SystemColors.WindowText;
             juliaPictureBox.BackgroundImageLayout = ImageLayout.Zoom;
             juliaPictureBox.Dock = DockStyle.Fill;
-            juliaPictureBox.Location = new Point(42, 34);
+            juliaPictureBox.Location = new Point(28, 17);
             juliaPictureBox.Name = "juliaPictureBox";
             tableLayout.SetRowSpan(juliaPictureBox, 12);
-            juliaPictureBox.Size = new Size(763, 684);
+            juliaPictureBox.Size = new Size(491, 455);
             juliaPictureBox.TabIndex = 13;
             juliaPictureBox.TabStop = false;
             // 
@@ -279,9 +280,9 @@ namespace FractalsLab1Julia6
             juliaLabel.Dock = DockStyle.Fill;
             juliaLabel.Font = new Font("MS Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
             juliaLabel.ForeColor = SystemColors.ButtonFace;
-            juliaLabel.Location = new Point(42, 721);
+            juliaLabel.Location = new Point(28, 475);
             juliaLabel.Name = "juliaLabel";
-            juliaLabel.Size = new Size(763, 43);
+            juliaLabel.Size = new Size(491, 43);
             juliaLabel.TabIndex = 14;
             juliaLabel.Text = "Julia Set f(z) = z⁵ + c";
             juliaLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -293,12 +294,13 @@ namespace FractalsLab1Julia6
             saveButton.FlatStyle = FlatStyle.Flat;
             saveButton.Font = new Font("MS Gothic", 12F, FontStyle.Bold);
             saveButton.ForeColor = SystemColors.ButtonFace;
-            saveButton.Location = new Point(835, 724);
+            saveButton.Location = new Point(549, 478);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(154, 37);
             saveButton.TabIndex = 15;
             saveButton.Text = "Save as JPEG";
             saveButton.UseVisualStyleBackColor = false;
+            saveButton.Click += saveButton_Click;
             // 
             // renderButton
             // 
@@ -308,7 +310,7 @@ namespace FractalsLab1Julia6
             renderButton.FlatStyle = FlatStyle.Flat;
             renderButton.Font = new Font("MS Gothic", 12F, FontStyle.Bold);
             renderButton.ForeColor = SystemColors.ButtonFace;
-            renderButton.Location = new Point(1017, 724);
+            renderButton.Location = new Point(731, 478);
             renderButton.Name = "renderButton";
             renderButton.Size = new Size(173, 37);
             renderButton.TabIndex = 16;
@@ -321,7 +323,7 @@ namespace FractalsLab1Julia6
             ImaginaryChoice.BorderStyle = BorderStyle.FixedSingle;
             ImaginaryChoice.Dock = DockStyle.Right;
             ImaginaryChoice.Font = new Font("MS Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            ImaginaryChoice.Location = new Point(1114, 34);
+            ImaginaryChoice.Location = new Point(828, 17);
             ImaginaryChoice.Name = "ImaginaryChoice";
             ImaginaryChoice.Size = new Size(76, 19);
             ImaginaryChoice.TabIndex = 17;
@@ -332,7 +334,7 @@ namespace FractalsLab1Julia6
             radiusChoice.BorderStyle = BorderStyle.FixedSingle;
             tableLayout.SetColumnSpan(radiusChoice, 2);
             radiusChoice.Font = new Font("MS Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            radiusChoice.Location = new Point(1017, 129);
+            radiusChoice.Location = new Point(731, 112);
             radiusChoice.Name = "radiusChoice";
             radiusChoice.Size = new Size(173, 19);
             radiusChoice.TabIndex = 18;
@@ -342,7 +344,7 @@ namespace FractalsLab1Julia6
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1216, 784);
+            ClientSize = new Size(930, 538);
             Controls.Add(tableLayout);
             Font = new Font("Segoe UI", 9F);
             FormBorderStyle = FormBorderStyle.FixedSingle;
