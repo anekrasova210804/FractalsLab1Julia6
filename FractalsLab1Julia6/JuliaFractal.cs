@@ -79,8 +79,8 @@ namespace FractalsLab1Julia6
                 for (int y = 0; y < juliaPictureBox.Height; y++)
                 {
 
-                    z = new Complex(1.5 * (x - juliaPictureBox.Width / 2) / (0.5 * zoom * juliaPictureBox.Width) + viewOffsetX,
-                        1.0 * (y - juliaPictureBox.Height / 2) / (0.5 * zoom * juliaPictureBox.Height) + viewOffsetY);
+                    z = new Complex(1.0 * (x - juliaPictureBox.Width / 2) / (0.5 * (zoom - 0.3) * juliaPictureBox.Width) + viewOffsetX,
+                        1.5 * (y - juliaPictureBox.Height / 2) / (0.5 * (zoom - 0.2) * juliaPictureBox.Height) + viewOffsetY);
                     i = 0;
                     while (z.Magnitude < radius && i < maxIterations)
                     {
